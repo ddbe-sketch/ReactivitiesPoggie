@@ -6,6 +6,10 @@ namespace Domain
     {
         public string? DisplayName { get; set; }
         public string? Bio { get; set; }
-        public string? MyProperty { get; set; }
+        public string? ImageUrl { get; set; }
+
+        //nav prop
+
+        public ICollection<ActivityAttendee> Activities { get; set; } = [];
     }
 }
