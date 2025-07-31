@@ -16,7 +16,11 @@ import { useProfile } from "../../lib/hooks/useProfile.ts";
 export default function ProfileActivities() {
   const [activeTab, setActiveTab] = useState(0);
   const { id } = useParams();
-  const { userActivities, setFilter, loadingUserActivities } = useProfile(id);
+  const {
+    userActivities = [],
+    setFilter,
+    loadingUserActivities,
+  } = useProfile(id);
 
   useEffect(() => {
     setFilter("future");

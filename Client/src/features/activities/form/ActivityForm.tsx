@@ -3,11 +3,7 @@ import { useActivities } from "../../../lib/hooks/useActivities";
 import { useNavigate, useParams } from "react-router";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
-import {
-  activitySchema,
-  type ActivitySchema,
-} from "../../../lib/schemas/activitySchema";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { type ActivitySchema } from "../../../lib/schemas/activitySchema";
 import TextInput from "../../../app/shared/components/TextInput";
 import SelectInput from "../../../app/shared/components/SelectInput";
 import { categoryOptions } from "./categoryOptions";
@@ -17,7 +13,6 @@ import LocationInput from "../../../app/shared/components/LocationInput";
 export default function ActivityForm() {
   const { control, reset, handleSubmit } = useForm<ActivitySchema>({
     mode: "onTouched",
-    resolver: zodResolver(activitySchema),
   });
   const navigate = useNavigate();
   const { id } = useParams();

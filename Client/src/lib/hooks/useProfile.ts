@@ -49,7 +49,7 @@ export const useProfile = (id?: string, predicate?: string) => {
           },
         }
       );
-      return response.data;
+      return response.data ?? [];
     },
     enabled: !!id && !!filter,
   });
